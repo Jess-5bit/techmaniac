@@ -1,0 +1,36 @@
+{
+	"items": [
+		{
+			"frame": 0,
+			"quip": "An original GB! Who has 4 AAs these days, anyway?"
+		},
+		{
+			"frame": 2,
+			"quip": "A 3310! Useful for bludgeoning."
+		},
+		{
+			"frame": 3,
+			"quip": "A 380Z! So that's what happens what a laptop lets itself go."
+		},
+		{
+			"frame": 1,
+			"quip": "A GBA! Look at all the great graphics you can't make out!"
+		},
+		{
+			"frame": 0,
+			"quip": "A GB Light! That backlight was totally worth £200... right?"
+		},
+		{
+			"frame": 3,
+			"quip": "A T420! You're pretty sure the trackpad is made out of sandpaper."
+		},
+		{
+			"frame": 1,
+			"quip": "A GB Micro! Mmm... eyestrain."
+		},
+		{
+			"frame": 2,
+			"quip": "A Razr! You wouldn't wish this numpad on your worst enemy."
+		}
+	]
+}

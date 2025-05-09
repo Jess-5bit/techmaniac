@@ -1,0 +1,76 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://music/intro.ogg" type="AudioStream" id=1]
+[ext_resource path="res://fonts/paragraph.tres" type="DynamicFont" id=2]
+[ext_resource path="res://scenes/Intro.gd" type="Script" id=3]
+[ext_resource path="res://sounds/loading.ogg" type="AudioStream" id=4]
+
+[node name="Intro" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Story" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -114.0
+margin_top = -56.0
+margin_right = 114.0
+margin_bottom = 56.0
+custom_fonts/font = ExtResource( 2 )
+text = "ROY WEBB, COUCH POTATO EXTRAORDINAIRE,
+WAS SITTING AMIDST HIS PILE OF USELESS
+OLD TAT ONE DAY, WHEN SUDDENLY...
+
+A STRANGE WIND SWEPT THROUGH THE ROOM
+AND CATAPULTED HIS BELOVED POSSESSIONS
+INTO A STRANGE LAND COMPLETELY ALIEN
+TO HIM, KNOWN ONLY AS \"THE OUTDOORS\"!
+
+FACED WITH THE LOSS OF THE ONLY SOURCE
+OF JOY IN HIS LIFE, ROY MUST VENTURE
+FORTH AND RETRIEVE HIS HOARD BEFORE
+SOMEONE ELSE FINDS IT AND FLOGS IT
+ON EBAY!
+
+PRESS JUMP TO CONTINUE"
+max_lines_visible = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Loading" type="Label" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -21.0
+margin_top = -6.0
+margin_right = 21.0
+margin_bottom = -2.0
+custom_fonts/font = ExtResource( 2 )
+text = "LOADING"
+max_lines_visible = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio_BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+autoplay = true
+
+[node name="Audio_Loading" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Timer_Next" type="Timer" parent="."]
+wait_time = 0.5
+autostart = true
+
+[connection signal="timeout" from="Timer_Next" to="." method="_on_Timer_Next_timeout"]

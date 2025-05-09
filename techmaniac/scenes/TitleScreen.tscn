@@ -1,0 +1,65 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/paragraph.tres" type="DynamicFont" id=1]
+[ext_resource path="res://sprites/logo.png" type="Texture" id=2]
+[ext_resource path="res://scenes/TitleScreen.gd" type="Script" id=3]
+[ext_resource path="res://sounds/ui_accept.wav" type="AudioStream" id=4]
+
+[node name="TitleScreen" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Texture_Logo" type="TextureRect" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -43.5
+margin_top = -5.0
+margin_right = 43.5
+margin_bottom = 5.0
+rect_scale = Vector2( 2, 2 )
+rect_pivot_offset = Vector2( 40, 10 )
+texture = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Prompt" type="Label" parent="."]
+visible = false
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -48.0
+margin_bottom = -40.0
+rect_pivot_offset = Vector2( 72, 4 )
+custom_fonts/font = ExtResource( 1 )
+text = "PRESS JUMP TO START"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label_Byline" type="Label" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -8.0
+rect_pivot_offset = Vector2( 72, 4 )
+custom_fonts/font = ExtResource( 1 )
+text = "(C) JOHN GABRIEL 2021 - GNU GPL V3             V1.0.0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Audio_Start" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="Timer_Blink" type="Timer" parent="."]
+autostart = true
+
+[connection signal="timeout" from="Timer_Blink" to="." method="_on_Timer_Blink_timeout"]
